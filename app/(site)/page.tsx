@@ -3,6 +3,8 @@ import getSongs from "@/actions/getSongs";
 import Header from "@/components/Header";
 import ListItem from "@/components/ListItem";
 
+import PageContent from "./_components/PageContent";
+
 export const revalidate = 0; // No re cache this page
 
 export default async function Home() {
@@ -31,9 +33,7 @@ export default async function Home() {
           </h1>
         </div>
         <div>
-          {songs.map((song) => (
-            <div key={song.id}>{song.title}</div>
-          ))}
+          <PageContent songs={songs} />
         </div>
       </div>
     </div>
